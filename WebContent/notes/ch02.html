@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Chapter 2: Creating Styles and Style Sheets</title>
+</head>
+<body>
+  <h1>Chapter 2: Creating Styles and Style Sheets</h1>
+  <h2>2.1. Anatomy of a Style</h2>
+  <p>A style is made up of two elements:</p>
+  <ol>
+    <li>Selector - the web page element that the browser formats</li>
+    <li>Declaration Block - the actual formatting instructions</li>
+  </ol>
+  <pre>p { color: red; font-size: 1.5em;}</pre>
+  <p>...tells the browser "make the text in all paragraphs red and 1.5 ems tall". Note that "em" is a unit
+    of measure based upon a browser's normal text size.</p>
+  <h3>Selector</h3>
+  <p>Selector tells the browser which element or elements on a page to style. Chapter 3 covers selectors
+    in depth.</p>
+  <h3>Declaration Block</h3>
+  <p>Includes all formatting options you want to apply to the element(s) identified by the Selector.
+    Declaration Blocks are made up of one or more "Declarations".</p>
+  <h4>Declaration</h4>
+  <p>Each Declaration is made up of a "Property" and a "Value". The "Property" is sepearted from the
+    "Value" by a colon ':'. Each Declaration is separated from the other Declarations by a semi-colon ';'.</p>
+  <p>In the above example the Declaration Block has 2 Declarations.</p>
+  <ol>
+    <li>color: red;</li>
+    <li>font-size: 1.5em;</li>
+  </ol>
+  <h5>Property</h5>
+  <p>A Property is a word, or a few hyphenated words, indicating a certain style effect.</p>
+  <p>
+    Common properties are: <span style="font-style: italic;">font-style, margin-top, text-align,
+      background-color</span>.
+  </p>
+  <h5>Value</h5>
+  <p>The Property dictates the range of legitimate values here. The Property defines what category of
+    style we are configuring, the Value contains the specifics. Ex. background-color: blue;</p>
+  <h2>2.2. Understanding Style Sheets</h2>
+  <p>
+    A collection of CSS styles comprises a <span style="font-style: italic;">style sheet</span>. There are 2
+    types of sytle sheets.
+  </p>
+  <ol>
+    <li>Internal - Style information is located in the web page itself.</li>
+    <li>External - Style information is located in a separate file and linked in the head.</li>
+  </ol>
+  <p>External sheets are usually the way to go, just don't get caught up in cache problems. Forcing a page
+    reload refetches the extenal style sheets. Command-R on Mac. F5 everywhere else, I think.</p>
+  <p>Internal style sheets always appear with &lt;style&gt; tags in the page's &lt;head&gt; section.</p>
+  <p>The author has an interesting note about &lt;style&gt; relative to &lt;script&gt; tags. He recommends
+    that &lt;style&gt; goes first so that the scripts can work with them.</p>
+  <p>
+    <span style="font-style: italic; font-weight: bold;">ALWAYS END AN EXTERNAL SHEET'S FILENAME WITH
+      .css.</span>
+  </p>
+  <p>There are 2 ways to link an external stylesheet with a page:
+  </p>
+  <ol>
+  <li>&lt;link rel="stylesheet" type="text/css" href="mystyle.css"/&gt;</li>
+  <li>&lt;style type="text/css"&gt;<br/>@import url(mystyle.css);<br/>&lt;/style&gt;
+  </ol>
+  <p>The @import thing works within a stylesheet as well.</p>
+  <p>The &lt;link&gt; is more common of the two</p>
+  <!-- Robert, suspend at 2.5 -->
+</body>
+</html>
