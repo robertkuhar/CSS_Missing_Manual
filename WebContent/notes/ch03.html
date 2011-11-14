@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Chapter 3: Selectors: Identifying What to Style</title>
+<link href="notes.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1>Chapter 3: Selectors: Identifying What to Style</h1>
+  <p>
+    Selectors in CSS allow you to specify <span class="italics">what</span> you want to format.
+  </p>
+  <h2>Tag Selectors: Page-Wide Styling</h2>
+  <ul>
+    <li>Tag Selectors are aka. "Type" or "Element" selectors</li>
+    <li>Efficient because they affect every occurrence of a tag on a page</li>
+    <li>"In essence, a tag selector redefines how a browser displays a particular tag."</li>
+  </ul>
+  <h2>Class Selectors: Pinpoint Control</h2>
+  <p>You create a Class Selector by just giving it a unique name and some property/value attributes.</p>
+  <ul>
+    <li>Class Selectors allow you to pinpoint the exact elements on a page you wish to affect regardless
+      of the tag of those elements.</li>
+    <li>Unlike tag selectors, you can create as many class selectors as you like and put them anywhere on
+      the page.</li>
+    <li><span class="bold">All class selector names must begin with a period.</span> After the period the
+      name must always start with a letter.</li>
+    <li>CSS permits only letters, numbers, hyphens, and underscores in class names</li>
+    <li>Class names are case sensitive.</li>
+  </ul>
+  <p>To use a class style, you must add a class attribute to the HTML tag you wish to style (or to a
+    &lt;span&gt; that you wrap the content you wish to style in)</p>
+  <pre>
+  &lt;p class="special"&gt;
+  </pre>
+  <h2 id="id_selectors">ID Selectors: Specific Page Elements</h2>
+  <p>
+    The ID Selector <span class="italics">identifies</span> a specific part of the page to be affected by the
+    format.
+  </p>
+  <ul>
+    <li>JavaScript can benefit from elements on the page having specific IDs</li>
+    <li>From a purely CSS viewpoint, IDs don't get you much that Class Selectors couldn't be used for.'</li>
+  </ul>
+  <p>Rules of thumb when considering Class vs ID Selectors...</p>
+  <ul>
+    <li>To use a style multiple times on a page, you must use Classes.</li>
+    <li>To use a style exactly once, for ever and ever, use IDs</li>
+    <li>Consider ID selector to sidestep style conflicts, since <span class="italics bold">"web
+        browsers give ID selectors priority over Class selectors</span>.</li>
+  </ul>
+  <p>
+    <span class="italic bold">Note:</span> It is not valid HTML if an ID appears more than once on a page, the
+    validators will fail, but most web browsers accept this fact and deal with it.
+  </p>
+  <pre>
+  #banner {
+      background: #CC0000;
+      height: 300px;
+      width: 720px;
+  }
+  ...
+  &lt;div id="banner"&gt;
+  </pre>
+  <h3>&lt;div&gt; tags</h3>
+  <p>
+    A &lt;div&gt; tag identifies a logical division of the page, like a banner, navigation bar, sidebar, or
+    footer. These are also called <span class="italics">block-level</span> elements because they form a
+    complete "block" of conents (with line breaks before and after them). The &lt;div&gt; tag works just like
+    a &lt;p&gt; tag.
+  </p>
+  <p>
+    A &lt;div&gt; tag has the unique ability to contain <span class="italics">several</span> block-level
+    elements, making it a great way to group tags that are logically related (like logo and nav bar). Once
+    grouped in this way, you can apply specific formatting to the tags inside the group.
+  </p>
+  <h3>Other reasons for IDs</h3>
+  <p>IDs allow you to reference elements directly with Javascript rather than having to XPath or JQuery
+    Selector locate them.</p>
+  <p>
+    IDs also allow you to provide "jump here" hyperlinks (I thought only anchors did this). If this is true,
+    clicking <a href="ch03.html#id_selectors">here</a> should take us back to the &lt;h2
+    id="id_selectors"&gt;ID Selectors: Specific Page Elements&lt;/h2&gt; at the head of this section.
+  </p>
+  <h2>Group Selectors: Styling groups of Tags</h2>
+  <p>Group Selectors allow you to apply a style to multiple selectors at the same time</p>
+  <pre>
+  h1, h2, h3, h4, h5, h6 { color: #F1CD33; }
+  </pre>
+  <p>There is nothing stopping you from having a Group Selector specify some of a tags format and then
+    having an ID selector or Tag Selector provide other formatting. (I think they can even override each
+    other, but the author has yet to explain the rules).</p>
+  <p>You can group dissimilar selectors in this way</p>
+  <pre>
+  h1, p,.copyright, #banner { color: #F1CD33; }
+  </pre>
+  <h2>The Universal Selector (Astertisk)</h2>
+  <p>
+    The '*' is special. It applies to <span class="italics">every single tag</span>. Sounds dangerous.
+  </p>
+  <pre>
+  * { font-weight: bold; }
+  </pre>
+  <!-- End of 2011-11-13 at the beginning of 3.5 -->
+</body>
+</html>
