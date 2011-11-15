@@ -100,6 +100,83 @@
   <pre>
   * { font-weight: bold; }
   </pre>
-  <!-- End of 2011-11-13 at the beginning of 3.5 -->
+  <h2>Descendent Selectors: Styling Tags with Tags</h2>
+  <p>
+    <span class="italics">Descendent Selectors</span> - Format a whole bunch of tags in a similar manner, but
+    leave others of the same type alone. Descendent Selectors let you format a tab based upon its relationship
+    to other tags.
+  </p>
+  <pre>
+  h1 strong { color: red; }
+  </pre>
+  <p>The above has the effect of styling any text inside of &lt;strong&gt; tags red only if they are
+    contained within an &lt;h1&gt; tag.</p>
+  <pre>
+  ul li a { font-family: Arial; } 
+  </pre>
+  <p>The above targets anchors within unordered lists.</p>
+  <p>
+    <span class="bold italics">Note:</span><span class="italics"> in general it is best to write as
+      short a descendent selector as possible.</span>
+  </p>
+  <p>You are also not limited to just tag selectors when building your descendent selectors. Consider...</p>
+  <pre>
+  p.intro a { color: yellow; }
+  </pre>
+  <p>...which turns &lt;a&gt; tags yellow that occur with &lt;p&gt; of class "intro"</p>
+  <h2>Pseudo-classes and pseudo-elements</h2>
+  <p>Pseudo-classes and pseudo-elements allow you to style some tags via well known attributes</p>
+  <h3>Styles for Links</h3>
+  <ul>
+    <li><span class="bold">a:link</span> - selects any link the user has not yet visited.</li>
+    <li><span class="bold">a:visited</span> - selects any link the user has visited, according to the
+      browser's history.</li>
+    <li id="id_hover"><span class="bold">a:hover</span> - allows you to change the look of the link as
+      the mouse passes over. AKA. Rollover effect.</li>
+    <li><span class="bold">a:active</span> - allows you to change the look of the link at the moment the
+      user clicks and before he releases.</li>
+  </ul>
+  <p>
+    <span class="bold italics">Note:</span><span class="italics"> You can use the :hover pseudo-class
+      on elements other than links, but beware IE when not in standards mode.</span>
+  </p>
+  <p>
+    <span style="font-weight: bold; color: red;">BEYOND THIS POINT, the Selectors become less useful</span>.
+    Some are rarely used, mostly because IE doesn't support them in any consistent manner until IE8 and
+    beyond.
+  </p>
+  <ul>
+    <li><span class="bold">p:first-letter</span> - :first-letter pseudo-element lets you create a drop
+      cap, an initial letter that jumps out from the rest of the paragraph with bigger or bolder font
+      formatting, as at the beginning of a book chapter.</li>
+    <li><span class="bold">p:first-line</span> - :first-line of a paragraph in a different color keeps
+      your reader's eye moving and makes text appear appealing and fresh</li>
+  </ul>
+  <h4>:before and :after</h4>
+  <p>
+    The <span class="bold">:before</span> pseudo-element allows you to add content <span class="italics">before</span>
+    some tag; <span class="bold">:after</span> allows it <span class="italics">after</span>. <span
+      class="bold italics">Doesn't work until IE until IE8.</span>.
+  </p>
+  <h4>:first-child</h4>
+  <p>
+    The <span class="bold">:first-child</span> pseudo-element allows you to select just the first of "sibling"
+    tags for formatting.
+  </p>
+  <pre>
+  li:first-child { font-weight: bold; }
+  </pre>
+  <h4>:focus</h4>
+  <p>
+    The <span class="bold">:focus</span> pseudo-class works a lot like the <a href="ch03.html#id_hover"
+      class="bold">:hover</a> pseudo-class above.
+  </p>
+  <p>The :focus selector is mostly useful for giving your visitor feedback, like changing the background
+    color of a text box to indicate where he's about to type. The following adds a light yellow color to any
+    text box a visitor clicks or tabs into...</p>
+  <pre>
+  input:focus { background-color: #FFFFCC; }
+  </pre>
+  <!-- robert, pick up at 3.7 -->
 </body>
 </html>
