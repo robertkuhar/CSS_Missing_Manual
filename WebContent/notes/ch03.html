@@ -156,7 +156,7 @@
   <p>
     The <span class="bold">:before</span> pseudo-element allows you to add content <span class="italics">before</span>
     some tag; <span class="bold">:after</span> allows it <span class="italics">after</span>. <span
-      class="bold italics">Doesn't work until IE until IE8.</span>.
+      class="bold italics">Doesn't work in IE until IE8.</span>.
   </p>
   <h4>:first-child</h4>
   <p>
@@ -177,6 +177,17 @@
   <pre>
   input:focus { background-color: #FFFFCC; }
   </pre>
-  <!-- robert, pick up at 3.7 -->
+  <h2>Advanced Selectors</h2>
+  <span class="bold italics">Thes don't work in IE6.</span>.
+  <h3>Child Selectors</h3>
+  <p>Like descendent selectors, only more selective. An angle bracket '&gt;' indicates the exact
+    relationship between the parent and the child.</p>
+  <pre>
+  body &gt; h2 { font-weight: bold; } 
+  </pre>
+  <p>The child selector above would select &lt;body&gt;&lt;h2&gt; but not
+    &lt;body&gt;&lt;div&gt;&lt;h2&gt;. A descendent selector would have got them both.</p>
+  <h3>Adjacent Siblings</h3>
+  
 </body>
 </html>
