@@ -30,6 +30,8 @@
   <p>To use a class style, you must add a class attribute to the HTML tag you wish to style (or to a
     &lt;span&gt; that you wrap the content you wish to style in)</p>
   <pre>
+  .special { font-weight: bold; }
+  ...
   &lt;p class="special"&gt;
   </pre>
   <h2 id="id_selectors">ID Selectors: Specific Page Elements</h2>
@@ -81,8 +83,11 @@
     clicking <a href="ch03.html#id_selectors">here</a> should take us back to the &lt;h2
     id="id_selectors"&gt;ID Selectors: Specific Page Elements&lt;/h2&gt; at the head of this section.
   </p>
-  <h2>Group Selectors: Styling groups of Tags</h2>
-  <p>Group Selectors allow you to apply a style to multiple selectors at the same time</p>
+  <h2 id="group_selectors">Group Selectors: Styling groups of Tags</h2>
+  <p>
+    <span class="italics">Group Selectors</span> allow you to apply a style to multiple selectors at the same
+    time
+  </p>
   <pre>
   h1, h2, h3, h4, h5, h6 { color: #F1CD33; }
   </pre>
@@ -100,7 +105,7 @@
   <pre>
   * { font-weight: bold; }
   </pre>
-  <h2>Descendent Selectors: Styling Tags with Tags</h2>
+  <h2 id="desc_selectors">Descendent Selectors: Styling Tags with Tags</h2>
   <p>
     <span class="italics">Descendent Selectors</span> - Format a whole bunch of tags in a similar manner, but
     leave others of the same type alone. Descendent Selectors let you format a tab based upon its relationship
@@ -179,15 +184,61 @@
   </pre>
   <h2>Advanced Selectors</h2>
   <span class="bold italics">Thes don't work in IE6.</span>.
-  <h3>Child Selectors</h3>
-  <p>Like descendent selectors, only more selective. An angle bracket '&gt;' indicates the exact
-    relationship between the parent and the child.</p>
+  <h3 id="child_selectors">Child Selectors</h3>
+  <p>
+    <a href="ch03.html#child_selectors" class="italics">Child Selectors</a> are like <a
+      href="ch03.html#desc_selectors" class="italics">Descendent Selectors</a>, only more selective. An angle
+    bracket '&gt;' indicates the exact relationship between the parent and the child.
+  </p>
   <pre>
   body &gt; h2 { font-weight: bold; } 
   </pre>
   <p>The child selector above would select &lt;body&gt;&lt;h2&gt; but not
     &lt;body&gt;&lt;div&gt;&lt;h2&gt;. A descendent selector would have got them both.</p>
-  <h3>Adjacent Siblings</h3>
-  
+  <h3 id="adj_sib_selectors">Adjacent Sibling Selectors</h3>
+  <p>
+    <span class="italics">Adjacent Sibling Selectors</span> work on the relationship between 2 or more tags
+    that are peers of each other in the tree, rather than children as in <a href="ch03.html#child_selectors"
+      class="italics">Child Selectors</a> and <a href="ch03.html#desc_selectors" class="italics">Descendent
+      Selectors</a>.
+  </p>
+  <pre>
+  h2 + p { font-weight: bold }
+  </pre>
+  <p>
+    The <span class="italics">Adjacent Sibling</span> selector above formats just "<span class="italics bold">This
+      is P1</span>" in &lt;h2&gt;Heading&lt;/h2&gt;&lt;p&gt;<span class="italics bold">This is P1</span>&lt;/p&gt;&lt;p&gt;This
+    is P2&lt;/p&gt;.
+  </p>
+  <h3 id="attrib_selectors">Attribute Selectors</h3>
+  <p>CSS provides a way to select tags for formatting using their attributes (like an &lt;img&gt; tag's
+    title attribute).</p>
+  <pre>
+  img[title] { border-style: solid; border-width: 1px; }
+  </pre>
+  <p>
+    The above <span class="italics">Attribute Selector</span> will format all the image tags that have a title
+    attribute.
+  </p>
+  <pre>
+  a[href="http://www.cosmofarmer.com"] { color: red; font-weight: bold; }
+  </pre>
+  <p>
+    The above <span class="italics">Attribute Selector</span> will format all the anchor tags that have an
+    href attribute with a value of http://www.cosmofarmer.com. The "attribute equals" portion can be somewhat
+    regex-y as well like...
+  </p>
+  <pre>
+  a[href$=".pdf"] { background-image: url(doc_codon.png) no-repeat; padding-left: 15px; }
+  </pre>
+  <p>...which does some formatting to all the anchors with an href that ends in .pdf
+  <pre>
+  img[src*="headshot"]
+  </pre>
+  <p>Selects all images which has the word "headshot" somewhere in the file</p>
+  <p>
+    <span class="italics bold">Note:</span> He never says that the attribute specifiers are actually regex,
+    they just have a couple of similarities.
+  </p>
 </body>
 </html>
