@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Chapter 4: Saving Time with Style Inheritance</title>
+<link href="notes.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1>Chapter 4: Saving Time with Style Inheritance</h1>
+  <p>
+    <span class="italics">Inheritance</span> is the process by which some CSS properties applied to one tag
+    are passed on to nested tags. This allows you to set a property in an ancestor, like &lt;body&gt;, and
+    have it to the &lt;p&gt; tags and below. In other words, it doesn't only apply to the direct descendents,
+    but their descendents as well.
+  </p>
+  <p>
+    I believe the operative term above is <span class="bold italics">some properties</span>.
+  </p>
+  <h2>The Limits of Inheritance</h2>
+  <p>Inheritence isn't all-powerful. Many CSS properties don't pass down to descendent tags at all. The
+    list below summarizes the most common cases where inheritence doesn't apply</p>
+  <ul>
+    <li>Properties that affect the placement of elements on the page or the margins</li>
+    <li>Properties that affect background colors</li>
+    <li>Properties that affect borders</li>
+    <li>Web browser inherent styles (Headings are big and bold, for example). He recommends that you
+      suppress these entirely. Chapter 5 covers this.</li>
+    <li>When styles conflict, the more specific style wins out. This is what allows you to style
+      &lt;li&gt; elements with some specific formatting with a tag selector and it overcomes anything coming
+      in via the &lt;p&gt; or above.</li>
+  </ul>
+  <p>
+    <span class="bold italics">Note:</span> Conflicts between styles are very common. The rules for how
+    browsers deal with them are called the <span class="italics">cascade</span>.
+  </p>
+</body>
+</html>
