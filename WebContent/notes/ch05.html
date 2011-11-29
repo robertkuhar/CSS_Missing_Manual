@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Chapter 5: Managing Multiple Styles: The Cascade</title>
+<link href="notes.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1>Chapter 5: Managing Multiple Styles: The Cascade</h1>
+  <p>
+    A basic CSS mechanism known as the <span class="italics">cascade</span> governs how styles interact and
+    which styles get precedence when there's a conflict.
+  </p>
+  <p>
+    In the case of conflict, <span class="italics bold">the nearest ancestor wins</span>. In other words, the
+    style that's closest to the tag in question is the one that is applied.
+  </p>
+  <p>Properties from a style specifically applied to a tag beat out any inherited properties.</p>
+  <p>Properties from the most specific style win.</p>
+  <h2>Specificity formula</h2>
+  <ol>
+    <li>Tag selector is worth <span class="bold">1 point</span>.</li>
+    <li>Class selector is worth <span class="bold">10 points</span>.</li>
+    <li>ID selector is worth <span class="bold">100 points</span>.</li>
+    <li>An inline style is worth <span class="bold">1000 points</span>.</li>
+  </ol>
+  <p>
+    If after all of this there is still a tie, <span class="italics bold">the last style wins</span>.
+  </p>
+  <p>
+    <span class="italics">!important;</span> on any property in a declaration block shields it from
+    specificity overrides. Note that !important applies to a specific property, not an entire style.
+  </p>
+  <pre>
+  #nav a { color: red; }
+  a { color: teal !important; }
+  </pre>
+  <p>The above makes all links on the page, including those inside an element with the #nav id, the color
+    of teal.</p>
+  <h2>Start with a clean slate</h2>
+  <p>
+    The author recommends erasing the built in browser formatting an apply your own. This is called "<span
+      class="italics">CSS reset</span>" in the industry.
+  </p>
+  <pre>
+  html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    font-weight: normal;
+  }
+  ol {
+    margin-left: 1.4em;
+    list-style: decimal;
+  }
+  ul {
+    margin-left: 1.4em;
+    list-style:square;
+  }
+  img {
+    border: 0;
+  }
+  </pre>
+</body>
+</html>
